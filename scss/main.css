@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Hasklig';
-  background-color: #282a36;
+  background-color: #20212b;
   color: #f8f8f2;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -78,7 +78,7 @@ p {
 
 header {
   flex: 0 0 auto;
-  background-color: #20212b; }
+  background-color: #282a36; }
 
 nav {
   display: flex;
@@ -96,9 +96,22 @@ table tr {
 table td {
   padding-right: 2vh; }
 
+.highlight {
+  padding-bottom: 1vh; }
+
+pre {
+  padding: 1vh;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+.cmd {
+  padding-bottom: 2vh; }
+
 footer {
   flex-shrink: 0;
-  background-color: #20212b;
+  background-color: #282a36;
   padding: 2vh; }
   footer p {
     padding-bottom: 0; }

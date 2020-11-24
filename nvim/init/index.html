@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Sabato Luca Guadagno &lt;o0th@pm.me&gt;">
+<meta name="description" content="o0th personal notes" />
+
+
+  <title>o0th</title>
+
+
+
+
+
+<link rel="stylesheet" href="/scss/main.css">
+
+
+<link rel="preload" as="font" href="/fonts/Hasklig-Regular.otf" crossorigin="anonymous">
+
+
+<script src="https://kit.fontawesome.com/c403ebf6e0.js" crossorigin="anonymous"></script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"><body><header>
+  <nav>
+    <div class="title">
+      <p>
+        <span class="bold green">o0th</span><span>&nbsp;in&nbsp;</span>
+        <a class="cyan" href="https://o0th.github.io">~</a>
+      </p>
+    </div>
+    
+    
+      
+      
+      
+        
+        
+          <div class="title">&nbsp;/&nbsp;</div>
+          <div class="title">
+            <a class="cyan" href="/nvim">nvim</a>
+          </div>
+        
+      
+      
+        
+        
+          <div class="title">&nbsp;/&nbsp;</div>
+          <div class="title">
+            <a class="cyan" href="/nvim/init">init</a>
+          </div>
+        
+      
+      
+      
+      <div class="links">
+        <a href="https://github.com/o0th" target="_blank" rel="noopener" alt="Github">
+          <i class="fab fa-lg fa-github"></i>
+        </a>
+      </div>
+  </nav>
+</header>
+  <section class="main">
+    
+    <p class="cmd">
+  <span class="arrow green">➜</span>
+  <span class="bold">cat init</span>
+</p>
+    <p>Installation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install neovim ripgrep fzy
+</code></pre></div><p>Vim-plug installation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh -c <span style="color:#f1fa8c">&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
+</span><span style="color:#f1fa8c">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
+</code></pre></div><p>Configuration file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvim ~/.config/nvim/init.vim
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34; Plugins</span>
+call plug#begin(stdpath(<span style="color:#f1fa8c">&#39;data&#39;</span>) . <span style="color:#f1fa8c">&#39;/plugged&#39;</span>)
+  Plug <span style="color:#f1fa8c">&#39;dracula/vim&#39;</span>, { <span style="color:#f1fa8c">&#39;as&#39;</span>: <span style="color:#f1fa8c">&#39;dracula&#39;</span> }
+  Plug <span style="color:#f1fa8c">&#39;vim-airline/vim-airline&#39;</span>
+  Plug <span style="color:#f1fa8c">&#39;airblade/vim-gitgutter&#39;</span>
+  Plug <span style="color:#f1fa8c">&#39;cloudhead/neovim-fuzzy&#39;</span>
+call plug#end()
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set true colors</span>
+set termguicolors
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Enable syntax</span>
+syntax enable
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Highlight current line</span>
+set cursorline
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Show line number</span>
+set number
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set dracula theme</span>
+colorscheme dracula
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set airline theme</span>
+<span style="color:#ff79c6">let</span> g:airline_theme=<span style="color:#f1fa8c">&#39;dracula&#39;</span>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set airline fonts</span>
+<span style="color:#ff79c6">let</span> g:airline_powerline_fonts = <span style="color:#bd93f9">1</span>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Move line up or down (shift + up, shift + down)</span>
+nnoremap &lt;S-Up&gt; :m<span style="color:#bd93f9">-2</span>&lt;CR&gt;
+nnoremap &lt;S-Down&gt; :m+&lt;CR&gt;
+inoremap &lt;S-Up&gt; &lt;Esc&gt;:m<span style="color:#bd93f9">-2</span>&lt;CR&gt;
+inoremap &lt;S-Down&gt; &lt;Esc&gt;:m+&lt;CR&gt;
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; show always diff column</span>
+set signcolumn=yes
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; reduce updating time of diff column</span>
+set updatetime=<span style="color:#bd93f9">100</span>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set jk to esc</span>
+:imap jk &lt;Esc&gt;
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set ijkl  </span>
+map i &lt;Up&gt;
+map j &lt;Left&gt;
+map k &lt;Down&gt;
+noremap h i
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set fuzzy file</span>
+nnoremap &lt;C-p&gt; :FuzzyOpen&lt;CR&gt;
+</code></pre></div>
+  </section>
+<footer>
+  <p>
+    <span>© 2020 Sabato Luca Guadagno.</span>
+    <span>Powered by</span>
+    <a class="cyan" href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+  </p>
+</footer></body>
+</html>
