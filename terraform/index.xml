@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Terraform on My Blog</title>
+    <title>Terraform on o0th</title>
     <link>https://o0th.github.io/terraform/</link>
-    <description>Recent content in Terraform on My Blog</description>
+    <description>Recent content in Terraform on o0th</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Nov 2020 12:46:27 +0100</lastBuildDate>

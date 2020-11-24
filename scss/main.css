@@ -26,7 +26,21 @@ a {
   color: inherit;
   font-weight: bold;
   text-decoration: none; }
-
+  @media (min-width: 320px) {
+    a {
+      font-size: 13px; } }
+  @media (min-width: 360px) {
+    a {
+      font-size: 16px; } }
+p {
+  margin: 0;
+  padding-bottom: 1vh; }
+  @media (min-width: 320px) {
+    p {
+      font-size: 13px; } }
+  @media (min-width: 360px) {
+    p {
+      font-size: 16px; } }
 .red {
   color: #ff5555; }
 
@@ -71,17 +85,20 @@ nav {
   padding: 2vh; }
   nav .title {
     justify-content: flex-end; }
+    nav .title p {
+      padding-bottom: 0; }
   nav .links {
     margin-left: auto; }
 
-table {
-  padding-top: 1vh; }
-  table tr {
-    padding-bottom: 1vh; }
-  table td {
-    padding-right: 2vh; }
+table tr {
+  padding-bottom: 1vh; }
+
+table td {
+  padding-right: 2vh; }
 
 footer {
   flex-shrink: 0;
   background-color: #20212b;
   padding: 2vh; }
+  footer p {
+    padding-bottom: 0; }
