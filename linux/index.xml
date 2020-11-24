@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on My Blog</title>
+    <link>https://o0th.github.io/linux/</link>
+    <description>Recent content in Linux on My Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Nov 2020 09:48:33 +0100</lastBuildDate>
+    
+	<atom:link href="https://o0th.github.io/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

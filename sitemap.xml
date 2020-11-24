@@ -2,4 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
+  <url>
+    <loc>https://o0th.github.io/</loc>
+    <lastmod>2020-11-24T10:11:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://o0th.github.io/terraform/intro/</loc>
+    <lastmod>2020-11-23T14:59:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://o0th.github.io/terraform/</loc>
+    <lastmod>2020-11-23T12:46:27+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://o0th.github.io/linux/</loc>
+    <lastmod>2020-11-23T09:48:33+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://o0th.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://o0th.github.io/tags/</loc>
+  </url>
+  
 </urlset>
