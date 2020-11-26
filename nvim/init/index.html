@@ -27,9 +27,7 @@
 <link rel="manifest" href="favicons/site.webmanifest">
 <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"><body><header>
+<meta name="theme-color" content="#ffffff"><body><header>
   <nav>
     <div class="title">
       <p>
@@ -69,25 +67,28 @@
       </div>
   </nav>
 </header>
-  <section class="main">
-    
-    <p class="cmd">
+<section class="main">
+  
+  <p class="cmd">
   <span class="arrow green">➜</span>
   <span class="bold">cat init</span>
 </p>
-    <p>Installation</p>
+  <p>Installation</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install neovim ripgrep fzy
 </code></pre></div><p>Vim-plug installation</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh -c <span style="color:#f1fa8c">&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
 </span><span style="color:#f1fa8c">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
-</code></pre></div><p>Configuration file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvim ~/.config/nvim/init.vim
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34; Plugins</span>
-call plug#begin(stdpath(<span style="color:#f1fa8c">&#39;data&#39;</span>) . <span style="color:#f1fa8c">&#39;/plugged&#39;</span>)
+</code></pre></div><p>Configuration file location</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/.config/nvim/init.vim
+</code></pre></div><p>My configuration file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">`call plug#begin(stdpath(<span style="color:#f1fa8c">&#39;data&#39;</span>) . <span style="color:#f1fa8c">&#39;/plugged&#39;</span>)
   Plug <span style="color:#f1fa8c">&#39;dracula/vim&#39;</span>, { <span style="color:#f1fa8c">&#39;as&#39;</span>: <span style="color:#f1fa8c">&#39;dracula&#39;</span> }
   Plug <span style="color:#f1fa8c">&#39;vim-airline/vim-airline&#39;</span>
   Plug <span style="color:#f1fa8c">&#39;airblade/vim-gitgutter&#39;</span>
   Plug <span style="color:#f1fa8c">&#39;cloudhead/neovim-fuzzy&#39;</span>
+  Plug <span style="color:#f1fa8c">&#39;editorconfig/editorconfig-vim&#39;</span>
+  Plug <span style="color:#f1fa8c">&#39;neoclide/coc.nvim&#39;</span>, {<span style="color:#f1fa8c">&#39;branch&#39;</span>: <span style="color:#f1fa8c">&#39;release&#39;</span>}
+  Plug <span style="color:#f1fa8c">&#39;hashivim/vim-terraform&#39;</span>
 call plug#end()
 <span style="color:#6272a4">
 </span><span style="color:#6272a4">&#34; Set true colors</span>
@@ -111,6 +112,9 @@ colorscheme dracula
 </span><span style="color:#6272a4">&#34; Set airline fonts</span>
 <span style="color:#ff79c6">let</span> g:airline_powerline_fonts = <span style="color:#bd93f9">1</span>
 <span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Set tabline</span>
+<span style="color:#ff79c6">let</span> g:airline#extensions#tabline#enabled = <span style="color:#bd93f9">1</span>
+<span style="color:#6272a4">
 </span><span style="color:#6272a4">&#34; Move line up or down (shift + up, shift + down)</span>
 nnoremap &lt;S-Up&gt; :m<span style="color:#bd93f9">-2</span>&lt;CR&gt;
 nnoremap &lt;S-Down&gt; :m+&lt;CR&gt;
@@ -126,16 +130,40 @@ set updatetime=<span style="color:#bd93f9">100</span>
 </span><span style="color:#6272a4">&#34; Set jk to esc</span>
 :imap jk &lt;Esc&gt;
 <span style="color:#6272a4">
-</span><span style="color:#6272a4">&#34; Set ijkl  </span>
-map i &lt;Up&gt;
-map j &lt;Left&gt;
-map k &lt;Down&gt;
-noremap h i
-<span style="color:#6272a4">
 </span><span style="color:#6272a4">&#34; Set fuzzy file</span>
 nnoremap &lt;C-p&gt; :FuzzyOpen&lt;CR&gt;
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; TextEdit might fail if hidden is not set.</span>
+set hidden
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Some servers have issues with backup files, see #649.</span>
+set nobackup
+set nowritebackup
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Give more space for displaying messages.</span>
+set cmdheight=<span style="color:#bd93f9">2</span>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Use tab for trigger completion with characters ahead and navigate.</span>
+inoremap &lt;silent&gt;&lt;expr&gt; &lt;TAB&gt;
+      \ pumvisible() ? <span style="color:#f1fa8c">&#34;\&lt;C-n&gt;&#34;</span> :
+      \ &lt;SID&gt;check_back_space() ? <span style="color:#f1fa8c">&#34;\&lt;TAB&gt;&#34;</span> :
+      \ coc#refresh()
+inoremap &lt;expr&gt;&lt;S-TAB&gt; pumvisible() ? <span style="color:#f1fa8c">&#34;\&lt;C-p&gt;&#34;</span> : <span style="color:#f1fa8c">&#34;\&lt;C-h&gt;&#34;</span>
+
+<span style="color:#ff79c6">function</span>! s:check_back_space() abort
+  <span style="color:#ff79c6">let</span> col = col(<span style="color:#f1fa8c">&#39;.&#39;</span>) - <span style="color:#bd93f9">1</span>
+  return !col || getline(<span style="color:#f1fa8c">&#39;.&#39;</span>)[col - <span style="color:#bd93f9">1</span>]  =~# <span style="color:#f1fa8c">&#39;\s&#39;</span>
+<span style="color:#ff79c6">endfunction</span>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; terraform</span>
+<span style="color:#ff79c6">let</span> g:terraform_align=<span style="color:#bd93f9">1</span>
+<span style="color:#ff79c6">let</span> g:terraform_fmt_on_save=<span style="color:#bd93f9">1</span>
+</code></pre></div><p>Terraform language server</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/juliosueiras/terraform-lsp/releases/download/v0.0.11-beta2/terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
+tar -xf terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
+sudo install terraform-lsp /usr/bin
 </code></pre></div>
-  </section>
+</section>
 <footer>
   <p>
     <span>© 2020 Sabato Luca Guadagno.</span>
