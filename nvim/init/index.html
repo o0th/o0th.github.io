@@ -158,10 +158,35 @@ inoremap &lt;expr&gt;&lt;S-TAB&gt; pumvisible() ? <span style="color:#f1fa8c">&#
 </span><span style="color:#6272a4">&#34; terraform</span>
 <span style="color:#ff79c6">let</span> g:terraform_align=<span style="color:#bd93f9">1</span>
 <span style="color:#ff79c6">let</span> g:terraform_fmt_on_save=<span style="color:#bd93f9">1</span>
+</code></pre></div><p>Bash language server</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --global bash-language-server
 </code></pre></div><p>Terraform language server</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/juliosueiras/terraform-lsp/releases/download/v0.0.11-beta2/terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
 tar -xf terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
 sudo install terraform-lsp /usr/bin
+</code></pre></div><p>Dockerfile language server</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --global dockerfile-language-server-nodejs
+</code></pre></div><p>Coc-settings.json</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;languageserver&#34;</span>: {
+    <span style="color:#ff79c6">&#34;bash&#34;</span>: {
+      <span style="color:#ff79c6">&#34;command&#34;</span>: <span style="color:#f1fa8c">&#34;bash-language-server&#34;</span>,
+      <span style="color:#ff79c6">&#34;args&#34;</span>: [<span style="color:#f1fa8c">&#34;start&#34;</span>],
+      <span style="color:#ff79c6">&#34;filetypes&#34;</span>: [<span style="color:#f1fa8c">&#34;sh&#34;</span>],
+      <span style="color:#ff79c6">&#34;ignoredRootPaths&#34;</span>: [<span style="color:#f1fa8c">&#34;~&#34;</span>]
+    },
+    <span style="color:#ff79c6">&#34;terraform&#34;</span>: {
+      <span style="color:#ff79c6">&#34;command&#34;</span>: <span style="color:#f1fa8c">&#34;terraform-lsp&#34;</span>,
+      <span style="color:#ff79c6">&#34;filetypes&#34;</span>: [<span style="color:#f1fa8c">&#34;terraform&#34;</span>],
+      <span style="color:#ff79c6">&#34;initializationOptions&#34;</span>: {}
+    },
+    <span style="color:#ff79c6">&#34;docker&#34;</span>: {
+      <span style="color:#ff79c6">&#34;command&#34;</span>: <span style="color:#f1fa8c">&#34;docker-langserver&#34;</span>,
+      <span style="color:#ff79c6">&#34;args&#34;</span>: [<span style="color:#f1fa8c">&#34;--stdio&#34;</span>],
+      <span style="color:#ff79c6">&#34;filetypes&#34;</span>: [<span style="color:#f1fa8c">&#34;dockerfile&#34;</span>, <span style="color:#f1fa8c">&#34;Dockerfile&#34;</span>]
+    }
+  }
+}
 </code></pre></div>
 </section>
 <footer>
