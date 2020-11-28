@@ -111,6 +111,62 @@ pre {
 .cmd {
   padding-bottom: 2vh; }
 
+.chessboard {
+  display: flex;
+  box-sizing: content-box;
+  flex-direction: column;
+  width: 500px;
+  height: 500px; }
+
+.row {
+  display: flex;
+  flex: 1;
+  flex-direction: row; }
+
+.white-box {
+  display: flex;
+  background-color: #4c4e65;
+  flex: 1;
+  justify-content: center;
+  align-items: center; }
+
+.black-box {
+  display: flex;
+  background-color: #363748;
+  flex: 1;
+  justify-content: center;
+  align-items: center; }
+
+.white-piece {
+  color: #b5b7c8; }
+
+.black-piece {
+  color: #20212b; }
+
+.a1 {
+  border-bottom-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -khtml-border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px; }
+
+.h1 {
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -khtml-border-bottom-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px; }
+
+.a8 {
+  border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -khtml-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px; }
+
+.h8 {
+  border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -khtml-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px; }
+
 footer {
   flex-shrink: 0;
   background-color: #282a36;
