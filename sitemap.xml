@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://o0th.github.io/tmux/init/</loc>
+    <lastmod>2020-11-29T09:37:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://o0th.github.io/tmux/</loc>
+    <lastmod>2020-11-29T09:37:31+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://o0th.github.io/nvim/init/</loc>
     <lastmod>2020-11-24T17:51:51+01:00</lastmod>
   </url>

@@ -13,6 +13,17 @@
     
     <item>
       <title>Init</title>
+      <link>https://o0th.github.io/tmux/init/</link>
+      <pubDate>Sun, 29 Nov 2020 09:37:31 +0100</pubDate>
+      
+      <guid>https://o0th.github.io/tmux/init/</guid>
+      <description>Installation
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ~/.tmux.conf
+# List of plugins set -g @plugin &amp;#39;tmux-plugins/tpm&amp;#39; set -g @plugin &amp;#39;tmux-plugins/tmux-sensible&amp;#39; # Dracula set -g @plugin &amp;#39;dracula/tmux&amp;#39; set -g @dracula-show-battery false set -g @dracula-show-powerline true set -g @dracula-show-network false set -g @dracula-show-weather false set -g @dracula-show-time false set -g @dracula-cpu-usage true set -g @dracula-ram-usage true set -g @dracula-gpu-usage true set -g terminal-overrides &amp;#39;,xterm-256color:Tc&amp;#39; set -g default-terminal &amp;#34;tmux-256color&amp;#34; set -as terminal-overrides &amp;#39;,xterm*:sitm=\E[3m&amp;#39; # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.</description>
+    </item>
+    
+    <item>
+      <title>Init</title>
       <link>https://o0th.github.io/nvim/init/</link>
       <pubDate>Tue, 24 Nov 2020 17:51:51 +0100</pubDate>
       

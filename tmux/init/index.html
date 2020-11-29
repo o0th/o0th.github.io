@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Sabato Luca Guadagno &lt;o0th@pm.me&gt;" />
+<meta name="description" content="o0th personal notes" />
+
+
+<title>o0th</title>
+
+
+
+
+
+<link rel="stylesheet" href="/scss/main.css" />
+
+
+<link
+  rel="preload"
+  as="font"
+  href="/fonts/Hasklig-Regular.otf"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  src="https://kit.fontawesome.com/c403ebf6e0.js"
+  crossorigin="anonymous"
+></script>
+
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="favicons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="favicons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="favicons/favicon-16x16.png"
+/>
+<link rel="manifest" href="favicons/site.webmanifest" />
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+<body><header>
+  <nav>
+    <div class="title">
+      <p>
+        <a class="bold green" href="https://o0th.github.io">o0th</a>
+        <span>in</span>
+        <a class="cyan" href="https://o0th.github.io">~</a>
+      </p>
+    </div>
+    
+    
+      
+      
+      
+        
+        
+          <div class="title">&nbsp;/&nbsp;</div>
+          <div class="title">
+            <a class="cyan" href="/tmux">tmux</a>
+          </div>
+        
+      
+      
+        
+        
+          <div class="title">&nbsp;/&nbsp;</div>
+          <div class="title">
+            <a class="cyan" href="/tmux/init">init</a>
+          </div>
+        
+      
+      
+      
+      <div class="links">
+        <a href="https://github.com/o0th" target="_blank" rel="noopener" alt="Github">
+          <i class="fab fa-lg fa-github"></i>
+        </a>
+      </div>
+  </nav>
+</header>
+<section class="main">
+  
+  <p class="cmd">
+  <span class="arrow green">➜</span>
+  <span class="bold">cat init</span>
+</p>
+  <p>Installation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+</code></pre></div><p>~/.tmux.conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"># List of plugins
+set -g @plugin <span style="color:#f1fa8c">&#39;tmux-plugins/tpm&#39;</span>
+set -g @plugin <span style="color:#f1fa8c">&#39;tmux-plugins/tmux-sensible&#39;</span>
+
+# Dracula
+set -g @plugin <span style="color:#f1fa8c">&#39;dracula/tmux&#39;</span>
+set -g @dracula-show-battery false
+set -g @dracula-show-powerline true
+set -g @dracula-show-network false
+set -g @dracula-show-weather false
+set -g @dracula-show-time false
+set -g @dracula-cpu-usage true
+set -g @dracula-ram-usage true
+set -g @dracula-gpu-usage true
+
+set -g terminal-overrides <span style="color:#f1fa8c">&#39;,xterm-256color:Tc&#39;</span>
+set -g default-terminal <span style="color:#f1fa8c">&#34;tmux-256color&#34;</span>
+set -as terminal-overrides <span style="color:#f1fa8c">&#39;,xterm*:sitm=\E[3m&#39;</span>
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run <span style="color:#f1fa8c">&#39;~/.tmux/plugins/tpm/tpm&#39;</span>
+</code></pre></div><p>Commands (prefix = Ctrl + b)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xorg" data-lang="xorg">prefix <span style="color:#f1fa8c">+ I (install new plugins and refresh environment)</span>
+prefix <span style="color:#f1fa8c">+ U (update plugins)</span>
+prefix <span style="color:#f1fa8c">+ alt + U (remove plugins not on the plugin list)</span>
+
+prefix <span style="color:#f1fa8c">+ &#34; (split current tab horizontally)</span>
+prefix <span style="color:#f1fa8c">+ % (split current tab vertically)</span>
+prefix <span style="color:#f1fa8c">+ arrows (navigate tabs)</span>
+prefix <span style="color:#f1fa8c">(hold) + arrows (resize panes)</span>
+prefix <span style="color:#f1fa8c">+ $ (rename current session)</span>
+prefix <span style="color:#f1fa8c">+ , (rename current tab)</span>
+prefix <span style="color:#f1fa8c">+ s (switch between sessions)</span>
+prefix <span style="color:#f1fa8c">+ d (detach)</span>
+prefix <span style="color:#f1fa8c">+ x (delete a pane from your current window)</span>
+prefix <span style="color:#f1fa8c">+ &amp; (delete a tab in your current session)</span>
+prefix <span style="color:#f1fa8c">+ c (create a new tab)</span>
+prefix <span style="color:#f1fa8c">+ r (restart current session)</span>
+</code></pre></div><p><a href="https://tmuxguide.readthedocs.io/en/latest/tmux/tmux.html">Documentation</a></p>
+
+</section>
+<footer>
+  <p>
+    <span>© 2020 Sabato Luca Guadagno.</span>
+    <span>Powered by</span>
+    <a class="cyan" href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+  </p>
+</footer></body>
+</html>
