@@ -99,8 +99,10 @@
   <p>Installation</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 </code></pre></div><p>~/.tmux.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"># List of plugins
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"># Tmux plugin manager
 set -g @plugin <span style="color:#f1fa8c">&#39;tmux-plugins/tpm&#39;</span>
+
+# Tmux options
 set -g @plugin <span style="color:#f1fa8c">&#39;tmux-plugins/tmux-sensible&#39;</span>
 
 # Dracula
@@ -114,6 +116,7 @@ set -g @dracula-cpu-usage true
 set -g @dracula-ram-usage true
 set -g @dracula-gpu-usage true
 
+# True colors
 set -g terminal-overrides <span style="color:#f1fa8c">&#39;,xterm-256color:Tc&#39;</span>
 set -g default-terminal <span style="color:#f1fa8c">&#34;tmux-256color&#34;</span>
 set -as terminal-overrides <span style="color:#f1fa8c">&#39;,xterm*:sitm=\E[3m&#39;</span>
