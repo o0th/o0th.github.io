@@ -87,9 +87,16 @@
         <a href="https://github.com/o0th" target="_blank" rel="noopener" alt="Github">
           <i class="fab fa-lg fa-github"></i>
         </a>
+        <a href="https://www.instagram.com/o0thme" target="_blank" rel="noopener" alt="Instagram">
+          <i class="fab fa-lg fa-instagram"></i>
+        </a>
+        <a href="https://www.chess.com/member/o0th" target="_blank" rel="noopener" alt="Chess">
+          <i class="fa fa-lg fa-chess"></i>
+        </a>
       </div>
   </nav>
 </header>
+
 <section class="main">
   
   <p class="cmd">
@@ -103,8 +110,13 @@
 </span><span style="color:#f1fa8c">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
 </code></pre></div><p>Configuration file location</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/.config/nvim/init.vim
-</code></pre></div><p>My configuration file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">`call plug#begin(stdpath(<span style="color:#f1fa8c">&#39;data&#39;</span>) . <span style="color:#f1fa8c">&#39;/plugged&#39;</span>)
+</code></pre></div><p>My configuration file
+
+
+
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">call plug#begin(stdpath(<span style="color:#f1fa8c">&#39;data&#39;</span>) . <span style="color:#f1fa8c">&#39;/plugged&#39;</span>)
   Plug <span style="color:#f1fa8c">&#39;dracula/vim&#39;</span>, { <span style="color:#f1fa8c">&#39;as&#39;</span>: <span style="color:#f1fa8c">&#39;dracula&#39;</span> }
   Plug <span style="color:#f1fa8c">&#39;vim-airline/vim-airline&#39;</span>
   Plug <span style="color:#f1fa8c">&#39;airblade/vim-gitgutter&#39;</span>
@@ -138,11 +150,18 @@ colorscheme dracula
 </span><span style="color:#6272a4">&#34; Set tabline</span>
 <span style="color:#ff79c6">let</span> g:airline#extensions#tabline#enabled = <span style="color:#bd93f9">1</span>
 <span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Show buffer number</span>
+<span style="color:#ff79c6">let</span> g:airline#extensions#tabline#enabled = <span style="color:#bd93f9">1</span>
+<span style="color:#ff79c6">let</span> g:airline#extensions#tabline#buffer_nr_show = <span style="color:#bd93f9">1</span>
+<span style="color:#6272a4">
 </span><span style="color:#6272a4">&#34; Move line up or down (shift + up, shift + down)</span>
 nnoremap &lt;S-Up&gt; :m<span style="color:#bd93f9">-2</span>&lt;CR&gt;
 nnoremap &lt;S-Down&gt; :m+&lt;CR&gt;
 inoremap &lt;S-Up&gt; &lt;Esc&gt;:m<span style="color:#bd93f9">-2</span>&lt;CR&gt;
 inoremap &lt;S-Down&gt; &lt;Esc&gt;:m+&lt;CR&gt;
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Navigate buffers with g\</span>
+map g\ :bn&lt;cr&gt;
 <span style="color:#6272a4">
 </span><span style="color:#6272a4">&#34; show always diff column</span>
 set signcolumn=yes
@@ -181,7 +200,13 @@ inoremap &lt;expr&gt;&lt;S-TAB&gt; pumvisible() ? <span style="color:#f1fa8c">&#
 </span><span style="color:#6272a4">&#34; terraform</span>
 <span style="color:#ff79c6">let</span> g:terraform_align=<span style="color:#bd93f9">1</span>
 <span style="color:#ff79c6">let</span> g:terraform_fmt_on_save=<span style="color:#bd93f9">1</span>
-</code></pre></div><p>Bash language server</p>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; Coc extensions</span>
+<span style="color:#ff79c6">let</span> g:coc_global_extensions = [<span style="color:#f1fa8c">&#39;coc-pairs&#39;</span>]
+</code></pre></div>
+
+</p>
+<p>Bash language server</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --global bash-language-server
 </code></pre></div><p>Terraform language server</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/juliosueiras/terraform-lsp/releases/download/v0.0.11-beta2/terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
@@ -189,7 +214,12 @@ tar -xf terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
 sudo install terraform-lsp /usr/bin
 </code></pre></div><p>Dockerfile language server</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --global dockerfile-language-server-nodejs
-</code></pre></div><p>Coc-settings.json</p>
+</code></pre></div><p>Coc-settings.json
+
+
+
+
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;languageserver&#34;</span>: {
     <span style="color:#ff79c6">&#34;bash&#34;</span>: {
@@ -211,6 +241,9 @@ sudo install terraform-lsp /usr/bin
   }
 }
 </code></pre></div>
+
+</p>
+
 </section>
 <footer>
   <p>
