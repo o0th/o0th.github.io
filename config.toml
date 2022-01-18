@@ -2,3 +2,7 @@ title = 'o0th'
 theme = 'cli'
 languageCode = 'en-us'
 baseURL = 'http://o0th.github.io'
+
+[params]
+username = 'o0th'
+github = 'https://github.com/o0th'
