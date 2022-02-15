@@ -54,16 +54,44 @@
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-terraform data-lang=terraform><span style=color:#ff79c6>data</span> <span style=color:#f1fa8c>&#34;digitalocean_domain&#34;</span> <span style=color:#f1fa8c>&#34;this&#34;</span> {
-  <span style=color:#50fa7b>name</span> = <span style=color:#f1fa8c>&#34;domain&#34;</span>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-terraform data-lang=terraform><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;digitalocean_domain&#34;</span> <span style=color:#f1fa8c>&#34;this&#34;</span> {
+  <span style=color:#50fa7b>name</span> = <span style=color:#f1fa8c>&#34;asdomare.com&#34;</span>
+}
+<span style=color:#ff79c6>
+</span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;digitalocean_app&#34;</span> <span style=color:#f1fa8c>&#34;development&#34;</span> {
+  spec {<span style=color:#6272a4>
+</span><span style=color:#6272a4>
+</span><span style=color:#6272a4>  # ...
+</span><span style=color:#6272a4></span>
+    domain {
+      <span style=color:#50fa7b>name</span> = <span style=color:#f1fa8c>&#34;subdomain.asdomare.com&#34;</span>
+    }<span style=color:#6272a4>
+</span><span style=color:#6272a4>
+</span><span style=color:#6272a4>  # ...
+</span><span style=color:#6272a4></span>
+  }
 }
 <span style=color:#ff79c6>
 </span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;digitalocean_record&#34;</span> <span style=color:#f1fa8c>&#34;this&#34;</span> {
-  <span style=color:#50fa7b>domain</span> = <span style=color:#8be9fd;font-style:italic>data</span>.digitalocean_domain.this.id
   <span style=color:#50fa7b>type</span>   = <span style=color:#f1fa8c>&#34;CNAME&#34;</span>
-  <span style=color:#50fa7b>name</span>   = <span style=color:#f1fa8c>&#34;iam&#34;</span>
+  <span style=color:#50fa7b>name</span>   = <span style=color:#f1fa8c>&#34;submain&#34;</span>
+  <span style=color:#50fa7b>domain</span> = digitalocean_domain.this.id
   <span style=color:#50fa7b>value</span>  = <span style=color:#f1fa8c>&#34;</span><span style=color:#f1fa8c>${</span><span style=color:#8be9fd;font-style:italic>replace</span>(digitalocean_app.this.default_ingress, <span style=color:#f1fa8c>&#34;https://&#34;</span>, <span style=color:#f1fa8c>&#34;&#34;</span>)<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>.&#34;</span>
 }
 </code></pre></td></tr></table>
