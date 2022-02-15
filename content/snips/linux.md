@@ -1,5 +1,5 @@
 ---
-title: "Linux"
+title: "linux, kernel"
 date: 2022-02-14T09:08:42+01:00
 draft: false
 ---
@@ -10,7 +10,7 @@ Install a different linux version
 yay -S linux-zen
 ```
 
-Update gub
+Update grub
 
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg

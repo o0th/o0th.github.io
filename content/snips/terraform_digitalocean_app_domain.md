@@ -5,14 +5,28 @@ draft: false
 ---
 
 ```terraform
-data "digitalocean_domain" "this" {
-  name = "domain"
+resource "digitalocean_domain" "this" {
+  name = "asdomare.com"
+}
+
+resource "digitalocean_app" "development" {
+  spec {
+
+  # ...
+
+    domain {
+      name = "subdomain.asdomare.com"
+    }
+
+  # ...
+
+  }
 }
 
 resource "digitalocean_record" "this" {
-  domain = data.digitalocean_domain.this.id
   type   = "CNAME"
-  name   = "iam"
+  name   = "submain"
+  domain = digitalocean_domain.this.id
   value  = "${replace(digitalocean_app.this.default_ingress, "https://", "")}."
 }
 ```
